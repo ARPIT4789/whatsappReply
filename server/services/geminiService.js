@@ -1,9 +1,29 @@
+const ai = require("../config/ai");
+
 async function generateWithFallback(contents) {
+
     try {
-        return await ai.models.generateContent({
-            model: "gemini-3.5-flash-lite",
-            contents
-        });
+
+        console.log("🚀 Trying Gemini 3.5 Flash-Lite...");
+
+        const response =
+            await ai.models.generateContent({
+                model: "gemini-3.5-flash-lite",
+                contents,
+
+                config: {
+                    thinkingConfig: {
+                        thinkingLevel: "minimal"
+                    }
+                }
+            });
+
+        console.log(
+            "✅ Gemini 3.5 Flash-Lite response received!"
+        );
+
+        return response;
+
     } catch (error) {
 
         console.error(
@@ -26,12 +46,35 @@ async function generateWithFallback(contents) {
         );
 
         console.log(
-            "Trying Gemini 3.6 Flash..."
+            "🔄 Trying Gemini 3.6 Flash..."
         );
 
-        return await ai.models.generateContent({
-            model: "gemini-3.6-flash",
-            contents
-        });
+        const response =
+            await ai.models.generateContent({
+                model: "gemini-3.6-flash",
+                contents,
+
+                config: {
+                    thinkingConfig: {
+                        thinkingLevel: "minimal"
+                    }
+                }
+            });
+
+        console.log(
+            "✅ Gemini 3.6 Flash response received!"
+        );
+
+        return response;
     }
 }
+
+
+// IMPORTANT:
+// replyRoutes.js imports generateWithFallback()
+// so this MUST remain here.
+
+module.exports = {
+    ai,
+    generateWithFallback
+};
