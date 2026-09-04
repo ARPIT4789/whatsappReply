@@ -2,13 +2,22 @@ const ai = require("../config/ai");
 
 async function generateWithFallback(contents) {
 
+    // ================================
+    // PRIMARY MODEL
+    // Gemini 3.6 Flash
+    // ================================
+
     try {
 
-        console.log("🚀 Trying Gemini 3.5 Flash-Lite...");
+        console.log(
+            "🚀 Trying Gemini 3.6 Flash..."
+        );
 
         const response =
             await ai.models.generateContent({
-                model: "gemini-3.5-flash-lite",
+
+                model: "gemini-3.6-flash",
+
                 contents,
 
                 config: {
@@ -16,10 +25,11 @@ async function generateWithFallback(contents) {
                         thinkingLevel: "minimal"
                     }
                 }
+
             });
 
         console.log(
-            "✅ Gemini 3.5 Flash-Lite response received!"
+            "✅ Gemini 3.6 Flash response received!"
         );
 
         return response;
@@ -27,7 +37,7 @@ async function generateWithFallback(contents) {
     } catch (error) {
 
         console.error(
-            "❌ Gemini 3.5 Flash-Lite FAILED"
+            "❌ Gemini 3.6 Flash FAILED"
         );
 
         console.error(
@@ -40,39 +50,60 @@ async function generateWithFallback(contents) {
             error.message
         );
 
-        console.error(
-            "Full error:",
-            error
-        );
 
-        console.log(
-            "🔄 Trying Gemini 3.6 Flash..."
-        );
+        // ================================
+        // FALLBACK MODEL
+        // Gemini 3.5 Flash-Lite
+        // ================================
 
-        const response =
-            await ai.models.generateContent({
-                model: "gemini-3.6-flash",
-                contents,
+        try {
 
-                config: {
-                    thinkingConfig: {
-                        thinkingLevel: "minimal"
+            console.log(
+                "🔄 Trying Gemini 3.5 Flash-Lite..."
+            );
+
+            const response =
+                await ai.models.generateContent({
+
+                    model: "gemini-3.5-flash-lite",
+
+                    contents,
+
+                    config: {
+                        thinkingConfig: {
+                            thinkingLevel: "minimal"
+                        }
                     }
-                }
-            });
 
-        console.log(
-            "✅ Gemini 3.6 Flash response received!"
-        );
+                });
 
-        return response;
+            console.log(
+                "✅ Gemini 3.5 Flash-Lite response received!"
+            );
+
+            return response;
+
+        } catch (fallbackError) {
+
+            console.error(
+                "❌ Gemini 3.5 Flash-Lite ALSO FAILED"
+            );
+
+            console.error(
+                "Status:",
+                fallbackError.status
+            );
+
+            console.error(
+                "Message:",
+                fallbackError.message
+            );
+
+            throw fallbackError;
+        }
     }
 }
 
-
-// IMPORTANT:
-// replyRoutes.js imports generateWithFallback()
-// so this MUST remain here.
 
 module.exports = {
     ai,
