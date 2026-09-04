@@ -1,5 +1,3 @@
-const ai = require("../config/ai");
-
 async function generateWithFallback(contents) {
     try {
         return await ai.models.generateContent({
@@ -7,8 +5,29 @@ async function generateWithFallback(contents) {
             contents
         });
     } catch (error) {
-        console.log("⚠️ Gemini 3.5 Flash lite unavailable.");
-        console.log("Trying Gemini 3.6 Flash...");
+
+        console.error(
+            "❌ Gemini 3.5 Flash-Lite FAILED"
+        );
+
+        console.error(
+            "Status:",
+            error.status
+        );
+
+        console.error(
+            "Message:",
+            error.message
+        );
+
+        console.error(
+            "Full error:",
+            error
+        );
+
+        console.log(
+            "Trying Gemini 3.6 Flash..."
+        );
 
         return await ai.models.generateContent({
             model: "gemini-3.6-flash",
@@ -16,8 +35,3 @@ async function generateWithFallback(contents) {
         });
     }
 }
-
-module.exports = {
-    ai,
-    generateWithFallback
-};

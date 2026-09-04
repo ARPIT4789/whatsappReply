@@ -494,7 +494,7 @@ async function generateAIReply(
 
 
         const response = await fetch(
-            "http://localhost:3000/generate-reply",
+            "https://whatsappreply.onrender.com/generate-reply",
             {
 
                 method: "POST",
@@ -785,7 +785,7 @@ async function syncConversationToMongoDB(
 
         const response =
             await fetch(
-                "http://localhost:3000/sync-conversation",
+                "https://whatsappreply.onrender.com/sync-conversation",
                 {
 
                     method: "POST",

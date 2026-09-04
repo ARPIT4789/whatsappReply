@@ -42,7 +42,7 @@ loginBtn.addEventListener("click", async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/auth/login",
+            "https://whatsappreply.onrender.com/auth/login",
             {
                 method: "POST",
 
@@ -113,7 +113,7 @@ registerBtn.addEventListener("click", async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/auth/register",
+            "https://whatsappreply.onrender.com/auth/register",
             {
                 method: "POST",
 
@@ -237,7 +237,7 @@ saveMode.addEventListener("click", async () => {
 
         const response =
             await fetch(
-                "http://localhost:3000/update-reply-mode",
+                "https://whatsappreply.onrender.com/update-reply-mode",
                 {
                     method: "POST",
 
@@ -328,7 +328,7 @@ saveSendMode.addEventListener("click", async () => {
 
         const response =
             await fetch(
-                "http://localhost:3000/update-send-mode",
+                "https://whatsappreply.onrender.com/update-send-mode",
                 {
                     method: "POST",
 
@@ -412,7 +412,7 @@ async function loadReplySettings() {
 
         const response =
             await fetch(
-                "http://localhost:3000/reply-settings",
+                "https://whatsappreply.onrender.com/reply-settings",
                 {
                     method: "GET",
 
