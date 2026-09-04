@@ -1,0 +1,457 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 360px;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f5f7f6;
+    color: #1f2937;
+}
+
+
+.container {
+    width: 100%;
+    padding: 18px;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #25d366;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 12px rgba(37, 211, 102, 0.25);
+}
+
+.header h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.header p {
+    margin: 3px 0 0;
+
+    font-size: 11px;
+    color: #6b7280;
+}
+
+
+/* ================= AUTH ================= */
+
+.auth-section {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.auth-section h3 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.subtitle {
+    margin: 5px 0 18px;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* ================= INPUTS ================= */
+
+input,
+select {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    background: white;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input {
+    margin-bottom: 11px;
+}
+
+input:focus,
+select:focus {
+    border-color: #25d366;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 211, 102, 0.12);
+}
+
+
+/* ================= BUTTONS ================= */
+
+button {
+    height: 40px;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* AUTH BUTTONS */
+
+.auth-buttons {
+    display: flex;
+    gap: 9px;
+}
+
+.auth-buttons button {
+    flex: 1;
+}
+
+
+/* PRIMARY */
+
+.primary-btn {
+    background: #25d366;
+    color: white;
+
+    box-shadow:
+        0 4px 10px rgba(37, 211, 102, 0.2);
+}
+
+.primary-btn:hover {
+    background: #20bd5b;
+}
+
+
+/* SECONDARY */
+
+.secondary-btn {
+    background: #eef2f1;
+    color: #374151;
+}
+
+.secondary-btn:hover {
+    background: #e2e7e5;
+}
+
+
+/* ================= USER CARD ================= */
+
+.user-card {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    background: white;
+
+    padding: 13px;
+
+    border-radius: 13px;
+
+    margin-bottom: 14px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f8ee;
+
+    font-size: 18px;
+}
+
+.logged-label {
+    display: block;
+
+    font-size: 10px;
+
+    color: #6b7280;
+
+    margin-bottom: 2px;
+}
+
+#userInfo {
+    margin: 0;
+
+    max-width: 260px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #111827;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ================= SETTINGS ================= */
+
+.setting-card {
+    background: white;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    margin-bottom: 13px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.setting-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.setting-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f0faf3;
+
+    font-size: 17px;
+}
+
+.setting-header h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+.setting-header p {
+    margin: 3px 0 0;
+
+    font-size: 10px;
+
+    color: #6b7280;
+}
+
+
+/* LABEL */
+
+.setting-card label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #4b5563;
+}
+
+
+/* SELECT */
+
+.setting-card select {
+    margin-bottom: 10px;
+}
+
+
+/* FULL BUTTON */
+
+.full-btn {
+    width: 100%;
+}
+
+
+/* ================= STATUS ================= */
+
+.status-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 12px;
+
+    border-radius: 9px;
+
+    background: #f0faf3;
+
+    color: #166534;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+}
+
+
+/* ================= LOGOUT ================= */
+
+.logout-btn {
+    width: 100%;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+}
+
+.logout-btn:hover {
+    background: #e5e7eb;
+}
+
+
+/* ================= ERROR / AUTH STATUS ================= */
+
+#authStatus {
+    margin: 12px 0 0;
+
+    font-size: 11px;
+
+    color: #dc2626;
+
+    text-align: center;
+}
+
+#status {
+    margin: 0;
+}
+
+.memory-card {
+    margin-top: 12px;
+}
+
+.memory-card button,
+.memory-item button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+}
+
+.memory-section {
+    margin-top: 15px;
+}
+
+.memory-section h3 {
+    margin-bottom: 12px;
+}
+
+.memory-item {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.memory-item h4 {
+    margin: 0 0 6px;
+}
+
+.memory-item p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.memory-item ul {
+    padding-left: 20px;
+    font-size: 13px;
+}

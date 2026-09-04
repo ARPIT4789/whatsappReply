@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp AI Reply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">WA</div>
+
+            <div>
+                <h2>WhatsApp AI Reply</h2>
+                <p>Smart replies powered by AI</p>
+            </div>
+        </div>
+
+
+        <!-- ================= AUTH ================= -->
+
+        <div id="authSection" class="auth-section">
+
+            <h3>Welcome 👋</h3>
+            <p class="subtitle">Login to continue</p>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email address"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <div class="auth-buttons">
+
+                <button id="loginBtn" class="primary-btn">
+                    Login
+                </button>
+
+                <button id="registerBtn" class="secondary-btn">
+                    Register
+                </button>
+
+            </div>
+
+            <p id="authStatus"></p>
+
+        </div>
+
+
+        <!-- ================= APP ================= -->
+
+        <div id="appSection" style="display: none;">
+
+            <!-- USER -->
+            <div class="user-card">
+
+                <div class="user-avatar">
+                    👤
+                </div>
+
+                <div>
+                    <span class="logged-label">Logged in as</span>
+                    <p id="userInfo"></p>
+                </div>
+
+            </div>
+
+
+            <!-- REPLY STYLE -->
+            <div class="setting-card">
+
+                <div class="setting-header">
+
+                    <div class="setting-icon">
+                        ✨
+                    </div>
+
+                    <div>
+                        <h3>Reply Style</h3>
+                        <p>Choose how AI writes your replies</p>
+                    </div>
+
+                </div>
+
+                <label for="replyMode">
+                    Response length
+                </label>
+
+                <select id="replyMode">
+
+                    <option value="normal">
+                        Normal
+                    </option>
+
+                    <option value="short">
+                        Short
+                    </option>
+
+                    <option value="detailed">
+                        Detailed
+                    </option>
+
+                </select>
+
+                <button id="saveMode" class="primary-btn full-btn">
+                    Save Reply Style
+                </button>
+
+            </div>
+
+
+            <!-- SEND MODE -->
+            <div class="setting-card">
+
+                <div class="setting-header">
+
+                    <div class="setting-icon">
+                        🚀
+                    </div>
+
+                    <div>
+                        <h3>Reply Sending</h3>
+                        <p>Control how AI sends replies</p>
+                    </div>
+
+                </div>
+
+                <label for="sendMode">
+                    Sending mode
+                </label>
+
+                <select id="sendMode">
+
+                    <option value="manual">
+                        Manual — Review first
+                    </option>
+
+                    <option value="auto">
+                        Auto — Send automatically
+                    </option>
+
+                </select>
+
+                <button id="saveSendMode" class="primary-btn full-btn">
+                    Save Sending Mode
+                </button>
+
+            </div>
+
+
+            <!-- STATUS -->
+            <div id="statusBox" class="status-box">
+
+                <span class="status-dot"></span>
+
+                <span id="status">
+                    Ready
+                </span>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+            <button id="logoutBtn" class="logout-btn">
+                Log out
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>
